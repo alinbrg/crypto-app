@@ -1,5 +1,5 @@
-import { Switch, Route, Link, Routes } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import { Route, Link, Routes } from "react-router-dom";
+import { Typography, Space } from "antd";
 import {
 	Navbar,
 	Homepage,
@@ -14,27 +14,34 @@ import "./App.css";
 export default function App() {
 	return (
 		<div className="app">
-			<nav className="navbar">
+			<header className="navbar">
 				<Navbar />
-			</nav>
+			</header>
 			<main className="main">
-				<Layout>
-					<div className="routes">
-						<Routes>
-							<Route path="/" element={<Homepage />} />
-
-							<Route path="/exchanges" element={<Exchanges />} />
-
-							<Route path="/cryptocurencies" element={<Cryptocurencies />} />
-
-							<Route path="/crypto/:coinId" element={<CryptoDetails />} />
-
-							<Route path="/news" element={<News />} />
-						</Routes>
-					</div>
-				</Layout>
+				<div className="routes">
+					<Routes>
+						<Route path="/" element={<Homepage />} />
+						<Route path="/exchanges" element={<Exchanges />} />
+						<Route path="/cryptocurencies" element={<Cryptocurencies />} />
+						<Route path="/crypto/:coinId" element={<CryptoDetails />} />
+						<Route path="/news" element={<News />} />
+					</Routes>
+				</div>
 			</main>
-			<div className="footer"></div>
+			<footer className="footer">
+				<Typography.Title
+					level={5}
+					style={{ color: "white", textAlign: "center" }}
+				>
+					Crypto App <br />
+					All rights reserved
+				</Typography.Title>
+				<Space>
+					<Link to="/">Home</Link>
+					<Link to="/exchanges">Exchanges</Link>
+					<Link to="/news">News</Link>
+				</Space>
+			</footer>
 		</div>
 	);
 }

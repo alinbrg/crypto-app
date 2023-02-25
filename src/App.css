@@ -16,23 +16,16 @@
 a:hover {
 	color: var(--pink) !important;
 }
-
-.app {
-	display: flex;
-	overflow: hidden;
-}
 .app {
 	display: grid;
-	grid-template-columns: 20% 75% 5%;
+	grid-template-columns: 20% 80%;
+	grid-template-areas:
+		"nav main"
+		"nav footer";
 }
-.navbar {
-	/* flex: 0.2; */
-	/* background-color: rgb(0, 21, 41); */
-}
-
-.main {
-	/* flex: 0.8; */
-	width: 100%;
+footer {
+	grid-area: footer;
+	margin-top: auto;
 }
 .routes {
 	padding: 20px;
@@ -79,29 +72,16 @@ a:hover {
 
 @media screen and (max-width: 1024px) {
 	.app {
-		flex-direction: column;
-		overflow: hidden;
 		grid-template-columns: 1fr;
-	}
-
-	.navbar {
-		flex: 1;
-	}
-
-	.main {
-		flex: 1;
-		margin-top: 90px;
-		margin-top: 0;
-		margin-left: 0px;
-		margin-right: 10px;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
 	}
 
 	.nav-container {
-		height: 8vh;
-		height: unset;
-		position: fixed;
 		width: 100%;
-		z-index: 100;
+		height: unset;
 		background-color: var(--bgSecondary);
 		position: static;
 	}

@@ -1,5 +1,6 @@
+import { Layout } from "antd";
 import React from "react";
 
 export default function Exchanges() {
-	return <div>Exchanges</div>;
+	return <Layout>Exchanges</Layout>;
 }

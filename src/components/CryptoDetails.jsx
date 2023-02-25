@@ -1,5 +1,6 @@
+import { Layout } from "antd";
 import React from "react";
 
 export default function CryptoDetails() {
-	return <div>CryptoDetails</div>;
+	return <Layout>CryptoDetails</Layout>;
 }

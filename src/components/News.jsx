@@ -1,5 +1,6 @@
+import { Layout } from "antd";
 import React from "react";
 
 export default function News() {
-	return <div>News</div>;
+	return <Layout>News</Layout>;
 }
