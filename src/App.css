@@ -69,7 +69,9 @@ footer {
 	justify-content: center;
 	align-items: center;
 }
-
+section {
+	background-color: transparent !important;
+}
 @media screen and (max-width: 1024px) {
 	.app {
 		grid-template-columns: 1fr;
