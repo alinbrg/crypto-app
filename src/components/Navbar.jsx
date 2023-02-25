@@ -43,7 +43,7 @@ export default function Navbar() {
 				{/* <Button className="menu-control-container"></Button> */}
 			</div>
 			<nav>
-				<Menu items={menuItems} />
+				<Menu items={menuItems} theme="dark" />
 			</nav>
 		</div>
 	);
