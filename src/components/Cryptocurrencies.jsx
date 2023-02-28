@@ -12,6 +12,8 @@ export default function Cryptocurencies({ simplified }) {
 	const [cryptos, setCryptos] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
 
+	// console.log(cryptos);
+
 	useEffect(() => {
 		const filteredData = cryptosList?.data?.coins.filter((coin) =>
 			coin.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -42,7 +44,7 @@ export default function Cryptocurencies({ simplified }) {
 							lg={6}
 							className="crypto-card"
 						>
-							<Link to={`/crypto/${currency.id}`}>
+							<Link to={`/crypto/${currency.name}`}>
 								<Card
 									title={`${currency.rank}. ${currency.name}`}
 									extra={

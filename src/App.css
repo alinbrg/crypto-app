@@ -29,6 +29,7 @@ footer {
 }
 .routes {
 	padding: 20px;
+	background-color: rgb(217, 217, 217, 0.3);
 }
 .nav-container {
 	position: fixed;
@@ -263,18 +264,21 @@ section {
 }
 .news-card {
 	min-height: 300px !important;
+	height: 100%;
 }
 .news-image-container {
 	display: flex !important;
 	justify-content: space-between !important;
+	/* flex-wrap: wrap; */
 }
 .news-title {
 	width: 70%;
 }
 
-.news-image-container .img {
+.news-image-container img {
 	width: 100px;
 	height: 100px;
+	object-fit: contain;
 }
 .news-card p {
 	color: black;
