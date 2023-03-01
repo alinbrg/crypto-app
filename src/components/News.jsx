@@ -15,6 +15,8 @@ export default function News({ simplified }) {
 		count: simplified ? 6 : 20,
 	});
 
+	// console.log(cryptoNews);
+
 	const { data: cryptosList } = useGetCryptosQuery(100);
 
 	if (isFetching) return <Loader />;
@@ -42,17 +44,17 @@ export default function News({ simplified }) {
 					</Select>
 				</Col>
 			)}
-			{cryptoNews?.articles?.map((news, i) => (
-				<Col xs={24} sm={12} lg={8} key={i}>
+			{cryptoNews?.value?.map((news, i) => (
+				<Col xs={24} sm={12} lg={8} key={news.id}>
 					<Card hoverable className="news-card">
 						<a href={news.url} target="_blank" rel="noreferrer">
 							<div className="news-image-container">
 								<Title className="news-title" level={4}>
 									{news.title}
 								</Title>
-								{news.urlToImage && (
+								{news.image.url && (
 									<img
-										src={news.urlToImage}
+										src={news.image.url}
 										alt={news.title}
 										className="news-img"
 									/>
@@ -65,12 +67,12 @@ export default function News({ simplified }) {
 							</p>
 							<div className="provider-container">
 								<div>
-									<Text className="provider-name">{news.source?.name}</Text>
+									<Text className="provider-name">{news.provider?.name}</Text>
 								</div>
 
 								<div>
 									<Text>
-										{moment(news.publishedAt).startOf("ss").fromNow()}
+										{moment(news.datePublished).startOf("ss").fromNow()}
 									</Text>
 								</div>
 							</div>

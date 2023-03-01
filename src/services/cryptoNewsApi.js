@@ -1,9 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseUrl = "https://newsapi.org/v2/everything";
+const baseUrl =
+	"https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI";
 
+const headers = {
+	"X-RapidAPI-Key": "7a3a390a93msh4a5890e90d5ca4cp160a95jsn554bc7cc834b",
+	"X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
+};
 const createRequest = (url) => ({
 	url,
+	headers,
 });
 
 export const cryptoNewsApi = createApi({
@@ -13,7 +19,7 @@ export const cryptoNewsApi = createApi({
 		getCryptoNews: builder.query({
 			query: ({ newsCategory, count }) =>
 				createRequest(
-					`?q=${newsCategory}&pageSize=${count}&apiKey=a094f869549b4b41a8fdb313ba2baaf9`
+					`?q=${newsCategory}&pageNumber=1&pageSize=${count}&autoCorrect=true`
 				),
 		}),
 	}),

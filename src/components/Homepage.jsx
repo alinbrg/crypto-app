@@ -58,7 +58,7 @@ export default function Homepage() {
 						Top 10 Cryptocurrencies in the world
 					</Title>
 					<Title level={3} className="show-more">
-						<Link to="/cryptocurrencies">Show More</Link>
+						<Link to="/crypto-app/cryptocurrencies">Show More</Link>
 					</Title>
 				</div>
 				<Cryptocurrencies simplified />
@@ -69,7 +69,7 @@ export default function Homepage() {
 						Latest Crypto News
 					</Title>
 					<Title level={3} className="show-more">
-						<Link to="/news">Show More</Link>
+						<Link to="/crypto-app/news">Show More</Link>
 					</Title>
 				</div>
 				<News simplified />
