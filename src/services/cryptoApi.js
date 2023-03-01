@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
-	"X-RapidAPI-Key": "7a3a390a93msh4a5890e90d5ca4cp160a95jsn554bc7cc834b",
+	"X-RapidAPI-Key": process.env.REACT_APP_Api_key,
 	"X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
 };
 
