@@ -12,7 +12,7 @@ export default function Cryptocurencies({ simplified }) {
 	const [cryptos, setCryptos] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
 
-	// console.log(cryptos);
+	console.log(cryptos);
 
 	useEffect(() => {
 		const filteredData = cryptosList?.data?.coins.filter((coin) =>
@@ -44,7 +44,7 @@ export default function Cryptocurencies({ simplified }) {
 							lg={6}
 							className="crypto-card"
 						>
-							<Link to={`/crypto/${currency.name}`}>
+							<Link to={`/crypto/${currency.uuid}`}>
 								<Card
 									title={`${currency.rank}. ${currency.name}`}
 									extra={

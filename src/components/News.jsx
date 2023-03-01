@@ -1,4 +1,4 @@
-import { Select, Typography, Row, Col, Avatar, Card } from "antd";
+import { Select, Typography, Row, Col, Card } from "antd";
 import moment from "moment";
 import { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";

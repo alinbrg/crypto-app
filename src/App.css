@@ -202,6 +202,7 @@ section {
 
 .coin-desc {
 	flex: 0.5;
+	flex-direction: column;
 }
 
 .coin-links {
@@ -233,9 +234,13 @@ section {
 	background-color: var(--bgSecondary);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
 	.stats-container {
 		flex-direction: column;
+	}
+	.other-stats-info,
+	.coin-value-statistics {
+		width: 100%;
 	}
 	.coin-desc-link {
 		flex-direction: column;
@@ -245,15 +250,13 @@ section {
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
 	.coin-links {
 		padding: 0px;
 	}
 	.coin-detail-container {
 		margin: 0;
 	}
-}
-@media screen and (max-width: 500px) {
 	.heading {
 		margin-top: 20px;
 	}
