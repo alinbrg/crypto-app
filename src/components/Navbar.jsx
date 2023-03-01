@@ -13,18 +13,18 @@ const menuItems = [
 	{
 		key: "home",
 		icon: <HomeOutlined />,
-		label: <Link to="/">Home</Link>,
+		label: <Link to="/crypto-app/">Home</Link>,
 	},
 	{
 		key: "Cryptocurrencies",
 		icon: <FundOutlined />,
-		label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
+		label: <Link to="/crypto-app/cryptocurrencies">Cryptocurrencies</Link>,
 	},
 
 	{
 		key: "News",
 		icon: <BulbOutlined />,
-		label: <Link to="/news">News</Link>,
+		label: <Link to="/crypto-app/news">News</Link>,
 	},
 ];
 
@@ -55,7 +55,7 @@ export default function Navbar() {
 			<div className="logo-container">
 				<Avatar src={icon} size="large" />
 				<Typography.Title level={2} className="logo">
-					<Link to="/">Crypto App</Link>
+					<Link to="/crypto-app/">Crypto App</Link>
 				</Typography.Title>
 				<Button
 					className="menu-control-container"
