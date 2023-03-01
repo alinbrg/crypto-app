@@ -1,4 +1,3 @@
-import HTMLReactParser from "html-react-parser";
 import millify from "millify";
 import { Col, Row, Typography, Select } from "antd";
 import { useParams } from "react-router-dom";
@@ -13,7 +12,7 @@ import {
 	NumberOutlined,
 	ThunderboltOutlined,
 } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
 	useGetCryptoDetailsQuery,
@@ -21,6 +20,7 @@ import {
 } from "../services/cryptoApi";
 
 import LineChart from "./LineChart";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -106,7 +106,7 @@ export default function CryptoDetails() {
 		},
 	];
 
-	if (isFetching) return "Loading";
+	if (isFetching) return <Loader />;
 
 	return (
 		<Col className="coin-detail-container">

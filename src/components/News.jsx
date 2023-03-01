@@ -3,6 +3,7 @@ import moment from "moment";
 import { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 const { Text, Title } = Typography;
 const { Option } = Select;
 
@@ -16,8 +17,7 @@ export default function News({ simplified }) {
 
 	const { data: cryptosList } = useGetCryptosQuery(100);
 
-	// console.log(cryptoNews, isFetching);
-	if (isFetching) return "Loading";
+	if (isFetching) return <Loader />;
 
 	return (
 		<Row gutter={[24, 24]}>

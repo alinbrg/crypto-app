@@ -18,6 +18,7 @@ a:hover {
 }
 .app {
 	display: grid;
+	overflow: hidden;
 	grid-template-columns: 20% 80%;
 	grid-template-areas:
 		"nav main"

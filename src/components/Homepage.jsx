@@ -3,7 +3,7 @@ import { Layout, Typography, Row, Col, Statistic } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
 import { Cryptocurrencies, News } from "../components";
-import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "./Loader";
 const { Title } = Typography;
 
 export default function Homepage() {
@@ -11,7 +11,7 @@ export default function Homepage() {
 
 	const globalStats = data?.data?.stats;
 
-	if (isFetching) return "Loading";
+	if (isFetching) return <Loader />;
 
 	return (
 		<>
