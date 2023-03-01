@@ -13,9 +13,14 @@ import {
 	NumberOutlined,
 	ThunderboltOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { useGetCryptoDetailsQuery } from "../services/cryptoApi";
+import {
+	useGetCryptoDetailsQuery,
+	useGetCryptoHistoryQuery,
+} from "../services/cryptoApi";
+
+import LineChart from "./LineChart";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -24,10 +29,12 @@ export default function CryptoDetails() {
 	const { coinId } = useParams();
 	const [timePeriod, setTimePeriod] = useState("7d");
 	const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+	const { data: coinHistory } = useGetCryptoHistoryQuery({
+		coinId,
+		timePeriod,
+	});
 
 	const cryptoDetails = data?.data?.coin;
-
-	// console.log(cryptoDetails);
 
 	const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -100,6 +107,7 @@ export default function CryptoDetails() {
 	];
 
 	if (isFetching) return "Loading";
+
 	return (
 		<Col className="coin-detail-container">
 			<Col className="coin-heading-container">
@@ -121,8 +129,14 @@ export default function CryptoDetails() {
 					<Option key={date}>{date}</Option>
 				))}
 			</Select>
+			<LineChart
+				coinHistory={coinHistory}
+				currentPrice={millify(cryptoDetails.price)}
+				coinName={cryptoDetails.name}
+			/>
+
 			<Col className="stats-container">
-				<Col xs={24} md={8} className="coin-value-statistics">
+				<Col xs={24} md={11} className="coin-value-statistics">
 					<Col className="coin-value-statistics-heading">
 						<Title level={3} className="coin-details-heading">
 							{cryptoDetails.name} Value Statistics
@@ -139,7 +153,7 @@ export default function CryptoDetails() {
 						</Col>
 					))}
 				</Col>
-				<Col xs={24} md={7} className="other-stats-info">
+				<Col xs={24} md={11} className="other-stats-info">
 					<Col className="coin-value-statistics-heading">
 						<Title level={3} className="coin-details-heading">
 							Other Statistics

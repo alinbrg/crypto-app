@@ -238,6 +238,9 @@ section {
 	.stats-container {
 		flex-direction: column;
 	}
+	canvas {
+		width: 100% !important;
+	}
 	.other-stats-info,
 	.coin-value-statistics {
 		width: 100%;
