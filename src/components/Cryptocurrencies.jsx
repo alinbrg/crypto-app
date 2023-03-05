@@ -43,7 +43,7 @@ export default function Cryptocurencies({ simplified }) {
 							lg={6}
 							className="crypto-card"
 						>
-							<Link to={`/crypto-app/crypto/${currency.uuid}`}>
+							<Link to={`/crypto/${currency.uuid}`}>
 								<Card
 									title={`${currency.rank}. ${currency.name}`}
 									extra={

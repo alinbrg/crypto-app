@@ -51,6 +51,7 @@ footer {
 }
 .logo {
 	margin: 0 0 0 15px;
+	margin-bottom: 0 !important;
 }
 .logo a {
 	color: white;
